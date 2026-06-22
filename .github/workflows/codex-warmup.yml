@@ -8,9 +8,6 @@ jobs:
   run-codex:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
       - name: Run Codex Exec Command
         uses: openai/codex-action@v1
         with:
