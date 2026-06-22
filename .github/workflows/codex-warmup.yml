@@ -1,0 +1,19 @@
+name: Daily Codex Morning Greeting
+on:
+  schedule:
+    # 3:00 AM UTC converts exactly to 9:00 AM GMT+6
+    - cron: '0 3 * * *' 
+
+jobs:
+  run-codex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Codex Exec Command
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.CODEX_API_KEY }}
+          prompt: 'Just say "Good Morning"'
+          sandbox: 'read-only'
