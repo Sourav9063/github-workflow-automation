@@ -1,20 +1,20 @@
-name: Daily Codex Morning Greeting
-on:
-  schedule:
-    # 3:00 AM UTC converts exactly to 9:00 AM GMT+6
-    - cron: '0 3 * * *' 
+# name: Daily Codex Morning Greeting
+# on:
+#   schedule:
+#     # 3:00 AM UTC converts exactly to 9:00 AM GMT+6
+#     - cron: '0 3 * * *' 
   
-  # This enables manual triggering in the GitHub Actions UI
-  workflow_dispatch: 
+#   # This enables manual triggering in the GitHub Actions UI
+#   workflow_dispatch: 
 
-jobs:
-  run-codex:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Codex Exec Command
-        uses: openai/codex-action@v1
-        with:
-          openai-api-key: ${{ secrets.CODEX_API_KEY }}
-          prompt: 'Just say "Good Morning"'
-          sandbox: 'read-only'
+# jobs:
+#   run-codex:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Run Codex Exec Command
+#         uses: openai/codex-action@v1
+#         with:
+#           openai-api-key: ${{ secrets.CODEX_API_KEY }}
+#           prompt: 'Just say "Good Morning"'
+#           sandbox: 'read-only'
 
